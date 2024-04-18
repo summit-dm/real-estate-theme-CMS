@@ -12,7 +12,7 @@ export default defineConfig({
   integrations: [
     tailwind(),
     storyblok({
-      accessToken: env.STORYBLOK_TOKEN,
+      accessToken: 'OqxGZ71sXSHPUCcoGe7KNQtt',
       bridge: true,
       components: {
         blogPost: 'storyblok/BlogPost'
