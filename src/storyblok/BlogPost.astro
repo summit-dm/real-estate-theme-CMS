@@ -1,0 +1,21 @@
+---
+import { storyblokEditable, renderRichText } from '@storyblok/astro'
+import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro'
+// import Layout from '../layouts/Layout.astro'
+const { blok } = Astro.props
+const content = renderRichText(blok.body)
+// console.log(content)
+// console.log('BP: ',blok)
+---
+<!-- <Layout> -->
+<article {...storyblokEditable(blok)} class="bg-white prose">
+  <h1>{blok.title}</h1>
+  <p>{blok.description}</p>
+  <Fragment set:html={content} />
+  <!-- {
+    blok.components?.map((blok: any) => {
+      return <StoryblokComponent blok={blok} />
+    })
+  } -->
+</article>
+<!-- </Layout> -->
